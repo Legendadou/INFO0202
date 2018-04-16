@@ -1,0 +1,163 @@
+<html>
+	<head>
+		<title>Jeu de pendu en Javascipt</title>
+		<link rel=Stylesheet type="text/css" href=stylePendu.css>
+		<script language="javascript">
+			
+		        var motSecret;
+				var random=0;
+				var tableauMot = new Array();
+				var mots = new Array();
+				var tailleMot;
+				var coupsManques=0;
+				var lettresTrouvees=0;
+				var fini=false;
+				var couleur='#'+(Math.random()*0xFFFFFF<<0).toString(16);
+				
+				mots[0]="INFORMATIQUE";
+				mots[1]="HTML";
+				mots[2]="CSS";
+				mots[3]="JAVASCRIPT";
+				mots[4]="ORDINATEUR";
+				mots[5]="SOURIS";
+				mots[6]="CLAVIER";
+				mots[7]="ECRAN";
+				mots[8]="CODE";
+				mots[9]="ERREUR";
+				mots[10]="INDENTATION";
+				mots[11]="CARACTERE";
+				mots[12]="VARIABLE";
+				
+				random=parseInt(Math.random()*13);
+				motSecret=mots[random];
+				tailleMot=motSecret.length;
+				
+
+				function changeCouleur(element){
+				  element.style.backgroundColor=couleur;
+				  element.couleur=true
+				}
+				
+
+				function proposer(element){
+				  if(element.couleur || fini){return;} 
+					
+				  var lettre=element.innerHTML;
+				  changeCouleur(element);
+					
+				  var trouve=false;
+					
+				  for(var i=0; i<tailleMot; i++){
+				    if(tableauMot[i].innerHTML==lettre){
+				      tableauMot[i].style.visibility='visible';
+                      trouve=true;
+				      lettresTrouvees++;
+				    }
+						
+				  }
+					
+					if(!trouve){
+				      coupsManques++;
+				      document.images['pendu'].src="images/pendu_"+coupsManques+".jpg"; 
+						
+				      if(coupsManques==9){
+						alert("Vous avez perdu !");
+						for(var i=0; i<tailleMot; i++) tableauMot[i].style.visibility='visible';
+						fini=true;
+				      }
+					}
+					if(lettresTrouvees==tailleMot){
+				      alert("Bravo ! Vous avez découvert le mot secret !");
+				      fini=true;
+					}
+                }
+		</script>
+	</head>
+	<body id=corps onload="Style()">
+      <center>
+		  <div id="page">
+		    <img name="pendu" class="pendu" src="images/pendu_0.jpg">
+		    <h1>Pendu</h1>
+				
+            <table id="clavier">
+		      <tr>
+				<td onclick="proposer(this);" >A</td>
+				<td onclick="proposer(this);" >B</td>
+				<td onclick="proposer(this);" >C</td>
+				<td onclick="proposer(this);" >D</td>
+				<td onclick="proposer(this);" >E</td>
+				<td onclick="proposer(this);" >F</td>
+				<td onclick="proposer(this);" >G</td>
+				<td onclick="proposer(this);" >H</td>
+				<td onclick="proposer(this);" >I</td>
+				<td onclick="proposer(this);" >J</td>
+		      </tr>
+		      <tr>
+				<td onclick="proposer(this);" >K</td>
+				<td onclick="proposer(this);" >L</td>
+				<td onclick="proposer(this);" >M</td>
+				<td onclick="proposer(this);" >N</td>
+				<td onclick="proposer(this);" >O</td>
+				<td onclick="proposer(this);" >P</td>
+				<td onclick="proposer(this);" >Q</td>
+				<td onclick="proposer(this);" >R</td>
+				<td onclick="proposer(this);" >S</td>
+				<td onclick="proposer(this);" >T</td>
+		      </tr>
+		      <tr>
+				<td onclick="proposer(this);" >U</td>
+				<td onclick="proposer(this);" >V</td>
+				<td onclick="proposer(this);" >W</td>
+				<td onclick="proposer(this);" >X</td>
+				<td onclick="proposer(this);" >Y</td>
+				<td onclick="proposer(this);" >Z</td>
+		      </tr>
+            </table>
+		    <br>
+		    <a class="lien" href="javascript:location.reload();">Nouvelle partie</a>
+					
+		    <table id="mot">
+		      <tr>
+		        <script language="javascript">
+				  for(var i=0; i<tailleMot; i++){
+                    document.write("<td> <p id=\""+i+"\">"+motSecret.charAt(i)+"</p></td>");
+                  } 
+				</script>
+		      </tr>
+		    </table>
+				
+				
+		    <script language="javascript">
+		      for(var i=0; i<tailleMot; i++){
+                tableauMot[i]=document.getElementById(i);
+              } 
+		    </script>
+
+			
+	   </div>
+    </center>
+    <a href="../../../SITE/Acceuil.html">Acceuil</a>
+    <script>
+        function Style(){
+          var tab = new Array();
+          tab[0] = "Arial" ;
+          tab[1] = "Arial Black" ;
+          tab[2] = "Comic Sans MS" ;
+          tab[3] = "Courier New" ;
+          tab[4] = "Georgia" ;
+          tab[5] = "Impact" ;
+          tab[6] = "Times New Roman" ;
+          tab[7] = "Trebuchet MS" ;
+          tab[8] = "Verdana" ;
+          var elmt = document.getElementById("corps");
+          var color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+          elmt.style.backgroundColor = color;
+          elmt.style.color = "#000000";
+          elmt.style.fontSize = "1.2em";
+          elmt.style.fontFamily = tab[parseInt(Math.random()*9)];
+          
+        }
+        
+      </script>
+  </body>
+</html>

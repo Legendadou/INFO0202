@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ChangeCouleur</title>
+		<style>
+			#div1{
+				background-color:#000000;
+				width:200px;
+				height:200px;
+			}
+            a{
+                color : black ;
+            }
+		</style>
+		<script language="javascript">
+			function couleur(){
+				var obj1 = document.getElementById("saisie");
+				var obj2 = document.getElementById("div1");
+				obj2.style.backgroundColor ="#"+obj1.value;
+			}
+		</script>
+	</head>
+	
+	<body id=corps onload="Style()">
+		<div id="div1"></div>
+		<p>Couleur Hexa</p>
+		<form>
+			<input type="text" id="saisie" onkeypress="couleur();return false;">
+			<input type="button" onclick="couleur()" value="Modifier la couleur" >
+		</form>
+      <a href="../../../SITE/Acceuil.html" style.color=black>Acceuil</a>
+      <script>
+        function Style(){
+          var tab = new Array();
+          tab[0] = "Arial" ;
+          tab[1] = "Arial Black" ;
+          tab[2] = "Comic Sans MS" ;
+          tab[3] = "Courier New" ;
+          tab[4] = "Georgia" ;
+          tab[5] = "Impact" ;
+          tab[6] = "Times New Roman" ;
+          tab[7] = "Trebuchet MS" ;
+          tab[8] = "Verdana" ;
+          var elmt = document.getElementById("corps");
+          var color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+          elmt.style.backgroundColor = color;
+          elmt.style.color = "#000000";
+          elmt.style.fontSize = "1.2em";
+          elmt.style.fontFamily = tab[parseInt(Math.random()*9)];
+          
+        }
+        
+      </script>
+	</body>
+	
+</html>

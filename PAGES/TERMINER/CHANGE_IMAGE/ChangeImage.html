@@ -1,0 +1,70 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ChangeImage</title>
+        <link rel=Stylesheet type="text/css" href=style.css>
+	</head>
+
+	<body id=corps onload="Style()">
+		<h3>Visionneuse d'images</h3>
+      <script language="javascript">
+        var image = new Image();
+        var i=0;
+        
+        function changePre(){
+          if(i>0){
+            i--;
+ 
+          }else{
+            i=7;
+          }
+          document.image.src="images/img"+i+".jpg";
+          
+        }
+        
+        function changeSup(){
+          if(i<7){
+            i++
+  
+          }else{
+            i=0;
+          }
+          document.image.src="images/img"+i+".jpg";
+          
+        }
+        
+        
+      </script>
+      <div id="image" style=width:100px>
+        <img src="images/img0.jpg" name="image" width="512" height="384">
+      </div>
+      <hr>
+      <input type="button" value="Précédent" onclick="changePre()">
+      <input type="button" value="Suivant" onclick="changeSup()">
+      <br>
+      <a href="../../../SITE/Acceuil.html">Acceuil</a>
+      <script>
+        function Style(){
+          var tab = new Array();
+          tab[0] = "Arial" ;
+          tab[1] = "Arial Black" ;
+          tab[2] = "Comic Sans MS" ;
+          tab[3] = "Courier New" ;
+          tab[4] = "Georgia" ;
+          tab[5] = "Impact" ;
+          tab[6] = "Times New Roman" ;
+          tab[7] = "Trebuchet MS" ;
+          tab[8] = "Verdana" ;
+          var elmt = document.getElementById("corps");
+          var color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+          elmt.style.backgroundColor = color;
+          elmt.style.color = "#000000";
+          elmt.style.fontSize = "1.2em";
+          elmt.style.fontFamily = tab[parseInt(Math.random()*9)];
+          
+        }
+        
+      </script>
+	</body>
+</html>

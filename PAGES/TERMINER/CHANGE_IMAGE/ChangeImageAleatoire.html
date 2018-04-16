@@ -1,0 +1,52 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ChangeImage</title>
+        <link rel=Stylesheet type="text/css" href=style.css>
+	</head>
+
+	<body id=corps onload="Style()">
+		<h3>Visionneuse d'images aléatoire</h3>
+      <script language="javascript">
+        var image = new Image();
+        
+        function change(){
+          
+          document.image.src="images/img"+parseInt(Math.random()*8)+".jpg";
+          
+        }
+        
+        
+      </script>
+      <div id="image" style=width:100px height:100px border:2px inset black>
+        <img src="images/img0.jpg" name="image" width="512" height="384">
+      </div>
+      <hr>
+      <input type="button" value="Changer l'image" onclick="change()">
+      <br>
+      <a href="../../../SITE/Acceuil.html">Acceuil</a>
+      <script>
+        function Style(){
+          var tab = new Array();
+          tab[0] = "Arial" ;
+          tab[1] = "Arial Black" ;
+          tab[2] = "Comic Sans MS" ;
+          tab[3] = "Courier New" ;
+          tab[4] = "Georgia" ;
+          tab[5] = "Impact" ;
+          tab[6] = "Times New Roman" ;
+          tab[7] = "Trebuchet MS" ;
+          tab[8] = "Verdana" ;
+          var elmt = document.getElementById("corps");
+          var color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+          elmt.style.backgroundColor = color;
+          elmt.style.color = "#000000";
+          elmt.style.fontSize = "1.2em";
+          elmt.style.fontFamily = tab[parseInt(Math.random()*9)];
+          
+        }
+        
+      </script>
+	</body>
+</html>

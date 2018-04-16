@@ -1,0 +1,77 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ACCUEIL</title>
+        <link rel=Stylesheet type="text/css" href=style.css>
+      
+	</head>
+
+	<body id=corps onload="Style()">
+      <h2>Bienvenue</h2>
+
+      <div id="horloge">
+        <script type="text/javascript">
+          var date = new Date();
+          var heure =date.getHours();
+          var minute=date.getMinutes();
+          var seconde=date.getSeconds();
+          var horloge = function() {
+            if(seconde<59)
+              seconde++;
+            else{
+              minute++;
+              seconde=00;
+            }
+            if(minute>59){
+              heure++;
+              minute=0;
+            }
+            document.getElementById("horloge").textContent=heure+":"+minute+":"+seconde;
+          }
+          horloge();
+          setInterval(horloge, 1000);
+        </script>
+      </div>
+      <div id="Liste">
+        <ol type="A">
+            <li>Tools 
+                <ul id="ulListe">
+                  <li><a href="../PAGES/TERMINER/CHANGE_COULEUR/ChangeCouleur.html">Changement de la couleur de fond</a></li>
+                  <li><a href="../PAGES/TERMINER/CHANGE_IMAGE/ChangeImage.html">Visionneuse d'image</a></li>
+                  <li><a href="../PAGES/TERMINER/CHANGE_IMAGE/ChangeImageAleatoire.html">Visionneuse d'image aléatoire</a></li>
+                </ul>
+            </li>  
+            <li> Jeux
+                <ul>
+                    <li><a href="../PAGES/TERMINER/MEMORY/Memory.html">Memory</a></li>
+                <li><a href="../PAGES/TERMINER/PENDU/pendu.html">Pendu</a></li>
+                </ul>
+            </li>
+        </ol>
+        
+      </div>
+      <script>
+        function Style(){
+          var tab = new Array();
+          tab[0] = "Arial" ;
+          tab[1] = "Arial Black" ;
+          tab[2] = "Comic Sans MS" ;
+          tab[3] = "Courier New" ;
+          tab[4] = "Georgia" ;
+          tab[5] = "Impact" ;
+          tab[6] = "Times New Roman" ;
+          tab[7] = "Trebuchet MS" ;
+          tab[8] = "Verdana" ;
+          var elmt = document.getElementById("corps");
+          var color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+          elmt.style.backgroundColor = color;
+          elmt.style.color = "#000000";
+          elmt.style.fontSize = "1.2em";
+          elmt.style.fontFamily = tab[parseInt(Math.random()*9)];
+          
+        }
+        setInterval(Style,60000);
+      </script>
+	</body>
+</html>

@@ -1,0 +1,326 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Memory</title>
+        <link rel=Stylesheet type="text/css" href=style.css>
+	</head>
+
+	<body id=corps onload="Style()">
+		<h3>Memory</h3>
+      <audio id="audio" src="../../../SITE/Sound/VictoryFF(cut).mp3">
+      </audio>
+      <script language="javascript">
+        var version = parseInt(Math.random()*4);
+        var indice;
+        
+        var t1 = new Array();
+        var t2 = new Array();
+        var t3 = new Array();
+        var t4 = new Array();
+        
+        var tbool=new Array();
+        
+        var image = new Image();
+        var st;
+        var point=0;
+        var clic=false;
+        
+        t1[0]="A.jpg"; tbool[0]=false; t2[0]="C.jpg"; t3[0]="F.jpg"; t4[0]="E.jpg";
+        t1[1]="C.jpg"; tbool[1]=false; t2[1]="A.jpg"; t3[1]="C.jpg"; t4[1]="F.jpg";
+        t1[2]="B.jpg"; tbool[2]=false; t2[2]="E.jpg"; t3[2]="C.jpg"; t4[2]="A.jpg";
+        t1[3]="C.jpg"; tbool[3]=false; t2[3]="G.jpg"; t3[3]="A.jpg"; t4[3]="C.jpg";
+        t1[4]="D.jpg"; tbool[4]=false; t2[4]="H.jpg"; t3[4]="D.jpg"; t4[4]="A.jpg";
+        t1[5]="A.jpg"; tbool[5]=false; t2[5]="D.jpg"; t3[5]="A.jpg"; t4[5]="D.jpg";
+        t1[6]="F.jpg"; tbool[6]=false; t2[6]="B.jpg"; t3[6]="H.jpg"; t4[6]="E.jpg";
+        t1[7]="G.jpg"; tbool[7]=false; t2[7]="H.jpg"; t3[7]="G.jpg"; t4[7]="H.jpg";
+        t1[8]="B.jpg"; tbool[8]=false; t2[8]="A.jpg"; t3[8]="B.jpg"; t4[8]="B.jpg";
+        t1[9]="D.jpg"; tbool[9]=false; t2[9]="C.jpg"; t3[9]="F.jpg"; t4[9]="D.jpg";
+        t1[10]="G.jpg"; tbool[10]=false; t2[10]="F.jpg"; t3[10]="E.jpg"; t4[10]="C.jpg";
+        t1[11]="H.jpg"; tbool[11]=false; t2[11]="E.jpg"; t3[11]="H.jpg"; t4[11]="G.jpg";
+        t1[12]="E.jpg"; tbool[12]=false; t2[12]="B.jpg"; t3[12]="G.jpg"; t4[12]="F.jpg";
+        t1[13]="E.jpg"; tbool[13]=false; t2[13]="D.jpg"; t3[13]="B.jpg"; t4[13]="B.jpg";
+        t1[14]="H.jpg"; tbool[14]=false; t2[14]="G.jpg"; t3[14]="E.jpg"; t4[14]="G.jpg";
+        t1[15]="F.jpg"; tbool[15]=false; t2[15]="F.jpg"; t3[15]="D.jpg"; t4[15]="H.jpg";
+        
+        
+        function reveler(indice){
+          switch (version){
+            case 0:
+              st=t1[indice];
+              break;
+            case 1:
+              st=t2[indice];
+              break;
+            case 2:
+              st=t3[indice];
+              break;
+            case 3:
+              st=t4[indice];
+              break;           
+          }
+          
+          switch (indice){
+            case 0:
+              document.image0.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 1:
+              document.image1.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 2:
+              document.image2.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 3:
+              document.image3.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 4:
+              document.image4.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 5:
+              document.image5.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 6:
+              document.image6.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 7:
+              document.image7.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 8:
+              document.image8.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 9:
+              document.image9.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 10:
+              document.image10.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 11:
+              document.image11.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 12:
+              document.image12.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 13:
+              document.image13.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 14:
+              document.image14.src="images/"+st;
+              tbool[indice]=true;
+              break;
+            case 15:
+              document.image15.src="images/"+st;
+              tbool[indice]=true;
+              break;
+          }
+          
+        }
+        
+        function retourner(indice){
+          switch (version){
+            case 0:
+              st=t1[indice];
+              break;
+            case 1:
+              st=t2[indice];
+              break;
+            case 2:
+              st=t3[indice];
+              break;
+            case 3:
+              st=t4[indice];
+              break;           
+          }
+          switch (indice){
+            case 0:
+              document.image0.src="images/dos.jpg";
+              break;
+            case 1:
+              document.image1.src="images/dos.jpg";
+              break;
+            case 2:
+              document.image2.src="images/dos.jpg";
+              break;
+            case 3:
+              document.image3.src="images/dos.jpg";
+              break;
+            case 4:
+              document.image4.src="images/dos.jpg";
+              break;
+            case 5:
+              document.image5.src="images/dos.jpg";
+              break;
+            case 6:
+              document.image6.src="images/dos.jpg";
+              break;
+            case 7:
+              document.image7.src="images/dos.jpg";
+              break;
+            case 8:
+              document.image8.src="images/dos.jpg";
+              break;
+            case 9:
+              document.image9.src="images/dos.jpg";
+              break;
+            case 10:
+              document.image10.src="images/dos.jpg";
+              break;
+            case 11:
+              document.image11.src="images/dos.jpg";
+              break;
+            case 12:
+              document.image12.src="images/dos.jpg";
+              break;
+            case 13:
+              document.image13.src="images/dos.jpg";
+              break;
+            case 14:
+              document.image14.src="images/dos.jpg";
+              break;
+            case 15:
+              document.image15.src="images/dos.jpg";
+              break;
+          }
+        }
+        
+        function recommencer(){
+          for(var j=0;j<16;j++){
+            retourner(j);
+            tbool[j]=false;
+          }
+          
+        }
+        
+        function compare(i,j){
+          switch (version){
+            case 0:
+              if(t1[i]!=t1[j]){
+                retourner(i);
+                tbool[i]=false;
+                retourner(j);
+                tbool[j]=false;
+              }
+              break;
+            case 1:
+              if(t2[i]!=t2[j]){
+                retourner(i);
+                tbool[i]=false;
+                retourner(j);
+                tbool[j]=false;
+              }
+              break;
+            case 2:
+              if(t3[i]!=t3[j]){
+                retourner(i);
+                tbool[i]=false;
+                retourner(j);
+                tbool[j]=false;
+              }
+              break;
+            case 3:
+              if(t4[i]!=t4[j]){
+                retourner(i);
+                tbool[i]=false;
+                retourner(j);
+                tbool[j]=false;
+              }
+              break;           
+          }
+          
+            
+          }
+        
+        function jeu(a){      
+          if(tbool[a]==false){
+            if(clic){
+              reveler(a);
+              clic=false;
+            }else{
+              reveler(a);
+              b=a;
+              clic=true;
+            }
+            compare(a,b);
+          }else{return;}
+          if(tbool[0] && tbool[1] && tbool[2] && tbool[3] && tbool[4] && tbool[5] && tbool[6] && tbool[7] && tbool[8] && tbool[9] && tbool[10] && tbool[11] && tbool[12] && tbool[13] && tbool[14] && tbool[15]){
+            var audio = document.getElementById("audio");
+            audio.play();
+            alert("Partie Terminée");
+          } 
+        }
+        function reload(){
+          window.refresh();
+        }
+      </script>
+      
+      <div id="gameBoard">
+        <table id="gB">
+          <tr>
+            <td onclick="jeu(0);"><img name="image0" src="images/dos.jpg"></td>
+            <td onclick="jeu(1);"><img name="image1" src="images/dos.jpg"></td>
+            <td onclick="jeu(2);"><img name="image2" src="images/dos.jpg"></td>
+            <td onclick="jeu(3);"><img name="image3" src="images/dos.jpg"></td>
+          </tr>
+          
+          <tr>
+            <td onclick="jeu(4);"><img name="image4" src="images/dos.jpg"></td>
+            <td onclick="jeu(5);"><img name="image5" src="images/dos.jpg"></td>
+            <td onclick="jeu(6);"><img name="image6" src="images/dos.jpg"></td>
+            <td onclick="jeu(7);"><img name="image7" src="images/dos.jpg"></td>
+          </tr>
+          
+          <tr>
+            <td onclick="jeu(8);"><img name="image8" src="images/dos.jpg"></td>
+            <td onclick="jeu(9);"><img name="image9" src="images/dos.jpg"></td>
+            <td onclick="jeu(10);"><img name="image10" src="images/dos.jpg"></td>
+            <td onclick="jeu(11);"><img name="image11" src="images/dos.jpg"></td>
+          </tr>
+          
+          <tr>
+            <td onclick="jeu(12);"><img name="image12" src="images/dos.jpg"></td>
+            <td onclick="jeu(13);"><img name="image13" src="images/dos.jpg"></td>
+            <td onclick="jeu(14);"><img name="image14" src="images/dos.jpg"></td>
+            <td onclick="jeu(15);"><img name="image15" src="images/dos.jpg"></td>
+          </tr>
+        </table>
+        <input type="button" value="Recommencer" onclick="recommencer()">
+        <input type="button" onclick='window.location.reload(false)' value="Nouvelle Partie">
+      </div>
+      <a href="../../../SITE/Acceuil.html">Acceuil</a>
+      <script>
+        function Style(){
+          var tab = new Array();
+          tab[0] = "Arial" ;
+          tab[1] = "Arial Black" ;
+          tab[2] = "Comic Sans MS" ;
+          tab[3] = "Courier New" ;
+          tab[4] = "Georgia" ;
+          tab[5] = "Impact" ;
+          tab[6] = "Times New Roman" ;
+          tab[7] = "Trebuchet MS" ;
+          tab[8] = "Verdana" ;
+          var elmt = document.getElementById("corps");
+          var color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+          elmt.style.backgroundColor = color;
+          elmt.style.color = "#000000";
+          elmt.style.fontSize = "1.2em";
+          elmt.style.fontFamily = tab[parseInt(Math.random()*9)];
+          
+        }
+        
+      </script>
+	</body>
+</html>
